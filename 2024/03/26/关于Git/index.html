@@ -1,0 +1,733 @@
+
+<!DOCTYPE html><html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1" theme-name="Stellar" theme-version="1.28.1">
+  
+  <meta name="generator" content="Hexo 7.2.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  
+  <title>关于Git - Hexo</title>
+
+  
+    <meta name="description" content="关于Git的使用方法 git init 为当前目录本地初始化，本地创建仓库  git init \&lt;repo-name\&gt; 在当前目录下初始化、创建仓库  git clone \&lt;https:&#x2F;&#x2F;xxxx.com.xxx.git\&gt; 远程克隆仓库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Git">
+<meta property="og:url" content="http://example.com/2024/03/26/%E5%85%B3%E4%BA%8EGit/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于Git的使用方法 git init 为当前目录本地初始化，本地创建仓库  git init \&lt;repo-name\&gt; 在当前目录下初始化、创建仓库  git clone \&lt;https:&#x2F;&#x2F;xxxx.com.xxx.git\&gt; 远程克隆仓库">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-03-26T08:27:12.000Z">
+<meta property="article:modified_time" content="2024-03-28T17:28:36.634Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.28.1">
+
+  
+
+  
+
+  
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Hexo</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="Search"></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div>
+
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">Recent Update</span></div><div class="widget-body fs14"><a class="item title" href="/2024/05/07/hexo%E5%8D%9A%E5%AE%A2/"><span class="title">Hexo 博客配置手册</span></a><a class="item title" href="/2024/03/23/%E5%85%B3%E4%BA%8E%E8%BF%99%E4%B8%AABlog/"><span class="title">关于这个Blog</span></a><a class="item title" href="/2024/04/28/%E5%A6%82%E4%BD%95%E5%9C%A8VSCode%E4%B8%AD%E9%85%8D%E7%BD%AEC#%E7%8E%AF%E5%A2%83%EF%BC%8C%E5%B9%B6%E9%85%8D%E7%BD%AEcoderunner%E4%B8%80%E9%94%AE%E8%BF%90%E8%A1%8C/"><span class="title">在VS Code中配置C#环境，并配置coderunner一键运行</span></a><a class="item title" href="/2024/05/04/Blender-%E5%BF%AB%E6%8D%B7%E9%94%AE/"><span class="title">Blender-快捷键</span></a><a class="item title" href="/2024/03/26/MarkDown%E8%AF%AD%E6%B3%95/"><span class="title">MarkDown语法</span></a><a class="item title" href="/2024/03/26/%E5%85%B3%E4%BA%8EGit/"><span class="title">关于Git</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2024-03-26T08:27:12.000Z">2024-03-26</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2024-03-28T17:28:36.634Z">2024-03-29</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>关于Git</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="关于Git的使用方法"><a href="#关于Git的使用方法" class="headerlink" title="关于Git的使用方法"></a>关于Git的使用方法</h1><ul>
+<li><p><code>git init</code> 为当前目录本地初始化，本地创建仓库</p>
+</li>
+<li><p><code>git init \&lt;repo-name\&gt;</code> 在当前目录<strong>下</strong>初始化、创建仓库</p>
+</li>
+<li><p><code>git clone \&lt;https://xxxx.com.xxx.git\&gt; </code>远程克隆仓库</p>
+<span id="more"></span></li>
+<li><p><code>git config --global init.defaultBranch main</code>全局更改默认branch(分支)为main</p>
+</li>
+<li><p><code>git branch -m main</code> 更改branch(分支)为main</p>
+</li>
+<li><p><code>git config --global --list</code> 可以查看当前git设置的<code>user.name</code>、<code>user.email</code></p>
+</li>
+<li><p><code>git config --global credential.helper store</code></p>
+</li>
+<li><p><code>git config user.name</code> 查看git用户名</p>
+</li>
+<li><p><code>git config user.email</code> 查看git用户邮箱</p>
+</li>
+<li><p><code>git config --global user.name &lt;your_name&gt;</code> 设置全局git用户名</p>
+</li>
+<li><p><code>git config --global user.email &lt;your_email&gt;</code> 设置全局git用户邮箱</p>
+</li>
+</ul>
+<h2 id="将文件添加到仓库"><a href="#将文件添加到仓库" class="headerlink" title="将文件添加到仓库"></a>将文件添加到仓库</h2><ul>
+<li><code>git init</code>		创建仓库</li>
+<li><code>git status</code>  	 查看仓库状态</li>
+<li><code>git add </code>              添加到暂存区</li>
+<li><code>git commit</code>       提交</li>
+</ul>
+<blockquote>
+<ul>
+<li><p><code>echo &quot;这是第一个文件&quot; &gt; file1.txt</code> 在当前仓库写入“这是第一个文件”到<code>file1.txt</code>文件，如果没有这个文件则先创建再写入</p>
+</li>
+<li><p><code>cat file1.txt</code> 查看<code>file.txt</code>文件</p>
+</li>
+<li><p><code>git status</code> 查看仓库状态会看到<code>file1.txt</code>这个文件是<strong>红色</strong>的，也就是未添加到暂存区，属于已修改，未提交暂存状态</p>
+</li>
+<li><p><code>git add file1.txt</code> 将文件添加到暂存区</p>
+<ul>
+<li><code>git status</code> 再次查看仓库状态会看到<code>file1.txt</code>会变成<strong>绿色</strong>，这说明<code>file1.txt</code>文件已将添加到暂存区。</li>
+<li><code>use &quot;git restore --staged &lt;file&gt;...&quot; to unstage</code> 命令窗口会提示这个命令，意思是我们可以使用<code>git restore --staged &lt;file&gt;</code> 这样的命令来把添加到暂存区的文件再取消暂存。这样再次使用git status查看仓库状态，<code>file1.txt</code>文件又会变成<strong>红色</strong>。</li>
+<li><code>git add *.txt</code> 可以把所有<code>txt</code>类型的文件都一次添加到暂存区</li>
+<li><code>git add .</code> 可以把当前文件下的所有文件都添加到暂存区，<code>.</code>并表示当前目录</li>
+</ul>
+</li>
+<li><p><code>git commit</code> 提交当前暂存区文件，这个命令只会提交暂存区的文件，而不会提交工作区中的其他文件。工作区中未被添加到暂存区的文件是不会提交的</p>
+<ul>
+<li><code>git commit -m &quot;更该说明&quot;</code> 如果不使用<code>-m</code>命令，<code>git commit</code>命令会进入一个交互式界面，默认使用vim编辑提交信息</li>
+</ul>
+</li>
+<li><p><code>git log</code> 查看提交记录</p>
+<ul>
+<li><code>git log --oneline</code> 查看简洁的提交记录</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h2><p><strong>用于回退版本，可以回退到之前的某一个提交的状态</strong></p>
+<blockquote>
+<p><code>git reset</code>的三种模式：</p>
+<ul>
+<li><p>软的：<code>git reset --soft</code></p>
+<ul>
+<li>回退到某一个版本，并且<strong>保留</strong>工作区和暂存区的所有修改内容</li>
+</ul>
+</li>
+<li><p>硬的：<code>git reset --hard</code></p>
+<ul>
+<li>回退到某一个版本，并且<strong>丢弃</strong>工作区和暂存区的所有修改内容</li>
+</ul>
+</li>
+<li><p>混合的：<code>git reset --mixed</code></p>
+<ul>
+<li>回退到某一个版本，并且<strong>只保留工作区</strong>的修改内容，丢弃暂存区的修改内容。git默认<code>mixed</code></li>
+</ul>
+</li>
+<li><p><code>git reflog</code> 查看操作的历史记录</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h2><ol>
+<li><p>查看<em><strong>工作区、暂存区、本地仓库</strong></em>之间的差异</p>
+</li>
+<li><p>查看<em><strong>不同版本</strong></em>之间的差异</p>
+</li>
+<li><p>查看<em><strong>不同分支</strong></em>之间的差异</p>
+</li>
+</ol>
+<ul>
+<li><p><code>git diff</code> 后什么也不加，默认是<strong>工作区</strong>和<strong>暂存区</strong>之间的差异内容</p>
+</li>
+<li><p><code>git diff head</code> 比较<strong>工作区</strong>和<strong>版本库</strong>之间的差异</p>
+</li>
+<li><p><code>git diff --cached</code> 比较<strong>暂存区</strong>和<strong>版本库</strong>之间的差异</p>
+</li>
+<li><p><code>git diff &lt;版本号&gt; &lt;版本号&gt;</code>比较<strong>两个特定版本</strong>之间的差异</p>
+</li>
+</ul>
+<ul>
+<li>最常用的：<code>git diff head~ head</code>比较<strong>当前版本</strong>和<strong>上一个版本</strong>差异<ul>
+<li><code>git diff head^ head</code> 作用同上</li>
+<li><code>git diff head~2 head</code> 作用：比较<strong>当前版本</strong>与<strong>提交之前第2个版本</strong>差异</li>
+<li><code>git diff head~3 head</code> 作用：比较<strong>当前版本</strong>与<strong>提交之前第3个版本</strong>差异</li>
+<li><code>git diff head~3 head &lt;file_name&gt;</code> 作用：比较<strong>当前版本特定文件</strong>与<strong>提交之前第3个版本特定文件</strong>之间的差异</li>
+</ul>
+</li>
+<li>查看两个分支之间的差异，直接加上两个分支名</li>
+</ul>
+<h2 id="从版本库中删除文件"><a href="#从版本库中删除文件" class="headerlink" title="从版本库中删除文件"></a>从版本库中删除文件</h2><ul>
+<li><p>windows直接删除</p>
+</li>
+<li><p><code>git ls-files</code> 查看git仓库中已经被跟踪的文件，即commit之后的文件内容</p>
+</li>
+<li><p><code>rm file;git add file</code> 先从工作区删除文件，然后再暂存删除内容</p>
+</li>
+<li><p><code>git rm &lt;file&gt;</code> 把文件从工作区和暂存区同时删除</p>
+</li>
+<li><p><code>git rm --cached &lt;file&gt;</code> 删除暂存区中的文件，但保留在当前工作区中</p>
+</li>
+<li><p><code>git rm -r * </code>递归删除某个目录下的所有子目录和文件</p>
+</li>
+<li><p>删除后不要忘记提交</p>
+</li>
+</ul>
+<h2 id="gitignore文件"><a href="#gitignore文件" class="headerlink" title=".gitignore文件"></a>.gitignore文件</h2><p><code>ignore</code>——忽略</p>
+<p>作用：忽略掉一些不应该被加入到版本库中的文件</p>
+<blockquote>
+<h4 id="应该忽略那些文件："><a href="#应该忽略那些文件：" class="headerlink" title="应该忽略那些文件："></a>应该忽略那些文件：</h4><blockquote>
+<ul>
+<li>系统或者软件自动生成的文件</li>
+<li>编译产生的中间文件和结果文件</li>
+<li>运行时生成的日志文件、缓存文件、临时文件</li>
+<li><strong>涉及身份、密码、口令、密钥等敏感信息文件</strong></li>
+</ul>
+</blockquote>
+<p>使用方法：</p>
+<blockquote>
+<p>例如本地仓库中有两个log文件：<code>access.log</code>、<code>other.log</code></p>
+<p>其中access.log存放我们的私密信息，我们不想提交。</p>
+<p>使用：<code>echo access.log &gt; .gitignore</code>将<code>access.log</code>添加到<code>.gitignore</code>文件中忽略，这样提交的就只是<code>other.log</code>与<code>.gitignore</code>文件，而<code>.gitignore</code>文件中也只有<code>access.log</code>的文件名，并不包含<code>access.log</code>的信息。相当于一个忽略清单。</p>
+<p>想要忽略什么文件，什么类型的文件，只要编辑<code>.gitignore</code>文件就OK，比如忽略所有<code>.log</code>文件，只要在<code>.gitignore</code>文件中添加<code>*.log</code>，这样无论是之前存在的，之后新建的log文件都会被忽略</p>
+<ul>
+<li><code>.gitignore</code>文件生效有一个前提：文件不能是已经被添加到版本库中的文件</li>
+<li><code>git status -s</code> 其中<code>-s</code>是<code>short</code>的缩写，是简略的查看状态</li>
+<li>忽略文件夹：在<code>.gitignore</code>文件中添加<code>&lt;file_name&gt;/</code>，这样就将整个文件夹（目录）及文件夹下的内容都忽略了。</li>
+</ul>
+<p><strong>.gitignore文件的匹配规则：</strong></p>
+<ol>
+<li><p>从上到下逐行匹配，每一行表示一个忽略模式</p>
+<ul>
+<li><p>Git官网匹配规则：</p>
+<p><a target="_blank" rel="noopener" href="https://git-scm.com/docs/gitignore">https://git-scm.com/docs/gitignore</a></p>
+</li>
+<li><p># 用作注释</p>
+</li>
+<li><p>…(自个儿查去)</p>
+</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+</blockquote>
+<hr>
+<hr>
+<h2 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h2><ul>
+<li><code>git clone &lt;ssh链接&gt;</code> 本地克隆远程仓库</li>
+<li><code>git pull</code> 拉取，本地仓库拉取远程仓库信息</li>
+<li><code>git push</code> 推送，本地仓库推送信息给远程仓库</li>
+</ul>
+<blockquote>
+<ol>
+<li>生成SSH Key：<code>ssh-keygen -t rsa -b 4096</code><ol>
+<li>私钥文件：<code>id_rsa</code></li>
+<li>公钥文件：<code>id_rsa.pub</code></li>
+</ol>
+</li>
+<li>克隆仓库：<code>git clone &lt;repo-address&gt;</code></li>
+<li>推送更新内容：<code>git push &lt;remote&gt;&lt;branch&gt;</code></li>
+<li>拉取更新内容：<code>git pull &lt;remote&gt;</code></li>
+</ol>
+</blockquote>
+<h3 id="本地已有仓库，如何放入远程仓库？"><a href="#本地已有仓库，如何放入远程仓库？" class="headerlink" title="本地已有仓库，如何放入远程仓库？"></a>本地已有仓库，如何放入远程仓库？</h3><ul>
+<li><p><code>git remote add &lt;shortname&gt;&lt;url&gt;</code> </p>
+<ul>
+<li><p>通常默认的<shortname>为：<code>origin</code></p>
+</li>
+<li><pre><code>git remote add origin git@github.com:knightadam/first-repo.git
+</code></pre>
+</li>
+<li><p>也可以指定一个其他的别名</p>
+</li>
+</ul>
+</li>
+<li><p><code>git remote -v</code> 查看当前仓库所对应的远程仓库的别名和地址</p>
+</li>
+<li><p><code>git branch -M main</code> 指定分支的名称为main</p>
+</li>
+<li><p><code>git push -u origin main:main</code> 将本地main分支与远程的origin仓库的main分支关联，如果本地分支与远程分支的名称相同，则可以省略：<code>git push origin main</code></p>
+</li>
+<li><p><code>git push -f origin main</code> 强制将本地仓库文件提交远程仓库</p>
+</li>
+<li><p><code>git pull &lt;远程仓库名&gt;&lt;远程分支名&gt;:&lt;本地分支名&gt;</code> 此处仓库和分支的名称可以省略，如果省略，默认拉取远程仓库别名为origin的main分支，作用就是将远程仓库的指定分支拉取到本地再进行合并</p>
+</li>
+<li><p><code>git fetch</code> 只会获取远程仓库的修改，但是并不会自动合并到本地仓库，而是需要手动合并</p>
+</li>
+</ul>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><blockquote>
+<ol>
+<li><p>添加远程仓库：</p>
+<ul>
+<li><p><code>git remote add &lt;远程仓库别名&gt;&lt;远程仓库地址&gt;</code></p>
+<p>例：<code>git remote add origin git@github.com:knightadam/first-repo.git</code></p>
+</li>
+<li><p><code>git push -u &lt;远程仓库名&gt;&lt;分支名&gt;</code></p>
+<p>即：<code>git push -u origin main</code></p>
+</li>
+</ul>
+</li>
+<li><p>查看远程仓库：<code>git remote -v</code></p>
+</li>
+<li><p>拉取远程仓库内容： </p>
+<ul>
+<li><p><code>git pull &lt;远程仓库名&gt;&lt;远程分支名&gt;:&lt;本地分支名&gt;</code></p>
+</li>
+<li><p><code>&lt;远程分支名&gt;:&lt;本地分支名&gt;</code> 相同可省略冒号后面的部分</p>
+</li>
+<li><p>即：<code>git pull origin main</code></p>
+</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="Gitee的使用和GitLab本地化部署"><a href="#Gitee的使用和GitLab本地化部署" class="headerlink" title="Gitee的使用和GitLab本地化部署"></a>Gitee的使用和GitLab本地化部署</h2><ul>
+<li>gitee.com<ul>
+<li>特色：国内平台</li>
+</ul>
+</li>
+<li>gitlab.com<ul>
+<li>特色：私有化部署</li>
+</ul>
+</li>
+</ul>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2024/04/28/%E5%A6%82%E4%BD%95%E5%9C%A8VSCode%E4%B8%AD%E9%85%8D%E7%BD%AEC#%E7%8E%AF%E5%A2%83%EF%BC%8C%E5%B9%B6%E9%85%8D%E7%BD%AEcoderunner%E4%B8%80%E9%94%AE%E8%BF%90%E8%A1%8C/">在VS Code中配置C#环境，并配置coderunner一键运行</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2024/03/26/MarkDown%E8%AF%AD%E6%B3%95/">MarkDown语法</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1">Stellar 1.28.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">On This Page</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8EGit%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">关于Git的使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E4%BB%93%E5%BA%93"><span class="toc-text">将文件添加到仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-reset"><span class="toc-text">git reset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-diff"><span class="toc-text">git diff</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E7%89%88%E6%9C%AC%E5%BA%93%E4%B8%AD%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-text">从版本库中删除文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitignore%E6%96%87%E4%BB%B6"><span class="toc-text">.gitignore文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E8%AF%A5%E5%BF%BD%E7%95%A5%E9%82%A3%E4%BA%9B%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-text">应该忽略那些文件：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%93%8D%E4%BD%9C"><span class="toc-text">远程操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%B7%B2%E6%9C%89%E4%BB%93%E5%BA%93%EF%BC%8C%E5%A6%82%E4%BD%95%E6%94%BE%E5%85%A5%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%EF%BC%9F"><span class="toc-text">本地已有仓库，如何放入远程仓库？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gitee%E7%9A%84%E4%BD%BF%E7%94%A8%E5%92%8CGitLab%E6%9C%AC%E5%9C%B0%E5%8C%96%E9%83%A8%E7%BD%B2"><span class="toc-text">Gitee的使用和GitLab本地化部署</span></a></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>Scroll to Top</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>Join Discussion</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `Just`,
+      min: `minutes ago`,
+      hour: `hours ago`,
+      day: `days ago`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.28.1" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>
