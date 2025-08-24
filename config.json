@@ -1,76 +1,40 @@
 {
-	// 博客标题，显示在页面顶部和浏览器标签页
 	"title": "Knight",
-	// 副标题，显示在博客标题下方
 	"subTitle": "且视他人之疑目如盏盏鬼火，大胆地去走自己的夜路。",
-	// 头像图片URL，显示在博客页面
 	"avatarUrl": "https://raw.githubusercontent.com/knightadam/ImgsUp/main/头像01.png?token=ARR6J5AX4V32H7HMUDDDQ53IVKVKY",
-	// GMEEK版本，"last"表示使用最新版本
 	"GMEEK_VERSION": "last",
-	// 显示在页面上的标题，可以与title不同
 	"displayTitle": "Knight's blog",
-	// 博客主页URL
 	"homeUrl": "http://blog.00o00.shop/",
-	// 网站favicon图标URL
 	"faviconUrl": "https://github.githubassets.com/favicons/favicon.svg",
-	// 联系邮箱地址
 	"email": "knight_zmy@163.com",
-	// 网站开始运行的日期，格式为MM/dd/yyyy
 	"startSite": "08/23/2025",
-	// 网站备案号，用于中国大陆网站
 	"filingNum": "浙ICP备xxxxxxxx号",
-	// 每页显示的文章数量
 	"onePageListNum": 15,
-	// 单独页面列表，如关于页面
 	"singlePage": ["about"],
-	// 图标列表，定义自定义SVG图标
 	"iconList": {
-		// 音乐图标SVG路径
 		"music": "M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Z"
 	},
-	// 外部链接列表
 	"exlink": { 
-		// 音乐链接URL
 		"music": "https://music.meekdai.com" 
 	},
-	// 评论标签颜色，使用十六进制颜色代码
 	"commentLabelColor": "#006b75",
-	// 年份颜色列表，用于时间轴显示，按顺序循环使用
 	"yearColorList": ["#bc4c00", "#0969da", "#1f883d", "#A333D0"],
-	// 国际化设置，CN表示中文界面
 	"i18n": "CN",
-	// 时区设置，UTC+8为中国标准时间
 	"UTC": 8,
-	// 主题模式，manual表示手动切换，auto表示自动根据时间切换
 	"themeMode": "manual",
-	// 日间主题样式
 	"dayTheme": "light",
-	// 夜间主题样式
 	"nightTheme": "dark_colorblind",
-	// URL模式，pinyin表示使用拼音，en表示使用英文
 	"urlMode": "pinyin",
-	// 自定义CSS样式
 	"style": "",
-	// 自定义JavaScript脚本
 	"script": "",
-	// 页面头部HTML代码
 	"head": "",
-	// 所有页面的公共头部HTML代码
 	"allHead": "",
-	// 首页自定义CSS样式
 	"indexStyle": "",
-	// 首页自定义JavaScript脚本
 	"indexScript": "",
-	// 是否显示文章来源，1表示显示，0表示不显示
 	"showPostSource": 1,
-	// RSS内容分隔符，sentence表示按句子分割
 	"rssSplit": "sentence",
-	// 页面底部文本
 	"bottomText": "转载请注明出处",
-	// Open Graph图片URL，用于社交媒体分享
 	"ogImage": "https://cdn.jsdelivr.net/gh/Meekdai/meekdai.github.io/logo64.jpg",
-	// Primer CSS框架链接
 	"primerCSS": "<link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />",
-	// 是否需要评论功能，1表示需要，0表示不需要
 	"needComment": 0
 }
