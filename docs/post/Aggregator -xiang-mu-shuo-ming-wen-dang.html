@@ -231,36 +231,36 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h2>3. 系统架构与主流程</h2>
 <h3>3.1 系统架构图</h3>
 <div class="highlight highlight-source-mermaid"><pre class="notranslate"><span class="pl-k">flowchart</span> <span class="pl-c1">TD</span>
-    <span class="pl-ent">A</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-ii">数据来源</span></span>
-机场网站/<span class="pl-ent">Telegram</span>/<span class="pl-ent">GitHub</span>/<span class="pl-ent">Twitter</span>/<span class="pl-ent">Google</span>] <span class="pl-k">--&gt;</span> <span class="pl-ent">B</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-ii">爬虫模块</span></span>
-<span class="pl-ent">crawl</span>.<span class="pl-ent">py</span>]
-    <span class="pl-ent">B</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">C</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-ii">数据处理模块</span></span>
-<span class="pl-ent">process</span>.<span class="pl-ent">py</span>]
-    <span class="pl-ent">C</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">D</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-ii">节点验证模块</span></span>
-<span class="pl-ent">clash</span>.<span class="pl-ent">py</span>/<span class="pl-ent">executable</span>.<span class="pl-ent">py</span>]
-    <span class="pl-ent">D</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">E</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-ii">输出格式化模块</span></span>
-<span class="pl-ent">clash</span>.<span class="pl-ent">py</span>/<span class="pl-ent">subconverter</span>.<span class="pl-ent">py</span>]
-    <span class="pl-ent">E</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">F</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-ii">推送模块</span></span>
-<span class="pl-ent">push</span>.<span class="pl-ent">py</span>]
-    <span class="pl-ent">G</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-ii">配置管理</span></span>
-<span class="pl-ent">config</span>.<span class="pl-ent">json</span>] <span class="pl-k">--&gt;</span> <span class="pl-ent">B</span>
+    <span class="pl-ent">A</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span>数据来源</span>
+<span class="pl-s">机场网站/Telegram/GitHub/Twitter/Google<span class="pl-pds"><span class="pl-sg">]</span></span></span> <span class="pl-k">--&gt;</span> <span class="pl-ent">B</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span>爬虫模块</span>
+<span class="pl-s">crawl.py<span class="pl-pds"><span class="pl-sg">]</span></span></span>
+    <span class="pl-ent">B</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">C</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span>数据处理模块</span>
+<span class="pl-s">process.py<span class="pl-pds"><span class="pl-sg">]</span></span></span>
+    <span class="pl-ent">C</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">D</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span>节点验证模块</span>
+<span class="pl-s">clash.py/executable.py<span class="pl-pds"><span class="pl-sg">]</span></span></span>
+    <span class="pl-ent">D</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">E</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span>输出格式化模块</span>
+<span class="pl-s">clash.py/subconverter.py<span class="pl-pds"><span class="pl-sg">]</span></span></span>
+    <span class="pl-ent">E</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">F</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span>推送模块</span>
+<span class="pl-s">push.py<span class="pl-pds"><span class="pl-sg">]</span></span></span>
+    <span class="pl-ent">G</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span>配置管理</span>
+<span class="pl-s">config.json<span class="pl-pds"><span class="pl-sg">]</span></span></span> <span class="pl-k">--&gt;</span> <span class="pl-ent">B</span>
     <span class="pl-ent">G</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">C</span>
     <span class="pl-ent">G</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">D</span>
     <span class="pl-ent">G</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">E</span>
     <span class="pl-ent">G</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">F</span>
-    <span class="pl-ent">H</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-ii">工具函数库</span></span>
-<span class="pl-ent">utils</span>.<span class="pl-ent">py</span>] <span class="pl-k">--&gt;</span> <span class="pl-ent">B</span>
+    <span class="pl-ent">H</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span>工具函数库</span>
+<span class="pl-s">utils.py<span class="pl-pds"><span class="pl-sg">]</span></span></span> <span class="pl-k">--&gt;</span> <span class="pl-ent">B</span>
     <span class="pl-ent">H</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">C</span>
     <span class="pl-ent">H</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">D</span>
     <span class="pl-ent">H</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">E</span>
     <span class="pl-ent">H</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">F</span>
-    <span class="pl-ent">I</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-ii">机场管理模块</span></span>
-<span class="pl-ent">airport</span>.<span class="pl-ent">py</span>] <span class="pl-k">--&gt;</span> <span class="pl-ent">C</span>
-    <span class="pl-ent">J</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-ii">工作流管理</span></span>
-<span class="pl-ent">workflow</span>.<span class="pl-ent">py</span>] <span class="pl-k">--&gt;</span> <span class="pl-ent">B</span>
+    <span class="pl-ent">I</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span>机场管理模块</span>
+<span class="pl-s">airport.py<span class="pl-pds"><span class="pl-sg">]</span></span></span> <span class="pl-k">--&gt;</span> <span class="pl-ent">C</span>
+    <span class="pl-ent">J</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span>工作流管理</span>
+<span class="pl-s">workflow.py<span class="pl-pds"><span class="pl-sg">]</span></span></span> <span class="pl-k">--&gt;</span> <span class="pl-ent">B</span>
     <span class="pl-ent">J</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">C</span>
-    <span class="pl-ent">K</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-ii">日志系统</span></span>
-<span class="pl-ent">logger</span>.<span class="pl-ent">py</span>] <span class="pl-k">--&gt;</span> <span class="pl-ent">B</span>
+    <span class="pl-ent">K</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span>日志系统</span>
+<span class="pl-s">logger.py<span class="pl-pds"><span class="pl-sg">]</span></span></span> <span class="pl-k">--&gt;</span> <span class="pl-ent">B</span>
     <span class="pl-ent">K</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">C</span>
     <span class="pl-ent">K</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">D</span>
     <span class="pl-ent">K</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">E</span>
